@@ -363,6 +363,13 @@ layout: "../layouts/default.astro"
     </header>
     <!-- main-header end -->
 
+    <!-- banner demo -->
+    <div id="demo-banner" class="demo-banner">
+        ⚠️ Esta página es solo una demostración. Si quiere más información, comunicarse al correo:
+        <a href="mailto:info@alosistemas.com">info@alosistemas.com</a>
+        <button class="close-btn" id="close-btn">✕</button>
+    </div>
+    <!-- banner demo end-->
 
     <!-- main-slider -->
     <section class="main-slider">
@@ -974,6 +981,16 @@ layout: "../layouts/default.astro"
 
     <!-- main-js -->
     <script src={`${import.meta.env.BASE_URL}/js/script.js`} defer></script>
-
+    <script type="module">
+        const banner = document.getElementById('demo-banner');
+        const closeBtn = document.getElementById('close-btn');
+      
+        closeBtn.addEventListener('click', () => {
+          banner.classList.add('hidden');
+          setTimeout(() => {
+            banner?.classList.remove('hidden');
+          }, 30000); // 30s
+        });
+      </script>
 </body><!-- End of .page_wrapper -->
 </html>
